@@ -95,13 +95,13 @@
 		9E4ACB7D2AC984E000B0552E /* CacheStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB642AC984E000B0552E /* CacheStack.swift */; };
 		9E4ACB7F2AC984E000B0552E /* SearchPostsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB672AC984E000B0552E /* SearchPostsTest.swift */; };
 		9E4ACB812AC984E000B0552E /* RequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB6A2AC984E000B0552E /* RequestBuilderTest.swift */; };
-		9E4ACB822AC984E000B0552E /* MarketPriceRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB6B2AC984E000B0552E /* MarketPriceRequestTest.swift */; };
+		9E4ACB822AC984E000B0552E /* PostsRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB6B2AC984E000B0552E /* PostsRequestTest.swift */; };
 		9E4ACB832AC984E000B0552E /* PostsRemoteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB6E2AC984E000B0552E /* PostsRemoteMock.swift */; };
 		9E4ACB842AC984E000B0552E /* PostsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB6F2AC984E000B0552E /* PostsRepositoryMock.swift */; };
 		9E4ACB852AC984E000B0552E /* PostsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB702AC984E000B0552E /* PostsUseCaseMock.swift */; };
 		9E4ACB872AC984E000B0552E /* MockNetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB742AC984E000B0552E /* MockNetworkTarget.swift */; };
-		9E4ACB882AC984E000B0552E /* MockSearchMarketUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB762AC984E000B0552E /* MockSearchMarketUsecase.swift */; };
-		9E4ACB892AC984E000B0552E /* MockSearchMarketeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB772AC984E000B0552E /* MockSearchMarketeRepository.swift */; };
+		9E4ACB882AC984E000B0552E /* MockSearchPostsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB762AC984E000B0552E /* MockSearchPostsUsecase.swift */; };
+		9E4ACB892AC984E000B0552E /* MockSearchPostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB772AC984E000B0552E /* MockSearchPostsRepository.swift */; };
 		9E4ACB8A2AC984E000B0552E /* MockSearchPostsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB782AC984E000B0552E /* MockSearchPostsRemote.swift */; };
 /* End PBXBuildFile section */
 
@@ -214,13 +214,13 @@
 		9E4ACB642AC984E000B0552E /* CacheStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheStack.swift; sourceTree = "<group>"; };
 		9E4ACB672AC984E000B0552E /* SearchPostsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPostsTest.swift; sourceTree = "<group>"; };
 		9E4ACB6A2AC984E000B0552E /* RequestBuilderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilderTest.swift; sourceTree = "<group>"; };
-		9E4ACB6B2AC984E000B0552E /* MarketPriceRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketPriceRequestTest.swift; sourceTree = "<group>"; };
+		9E4ACB6B2AC984E000B0552E /* PostsRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsRequestTest.swift; sourceTree = "<group>"; };
 		9E4ACB6E2AC984E000B0552E /* PostsRemoteMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsRemoteMock.swift; sourceTree = "<group>"; };
 		9E4ACB6F2AC984E000B0552E /* PostsRepositoryMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsRepositoryMock.swift; sourceTree = "<group>"; };
 		9E4ACB702AC984E000B0552E /* PostsUseCaseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsUseCaseMock.swift; sourceTree = "<group>"; };
 		9E4ACB742AC984E000B0552E /* MockNetworkTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTarget.swift; sourceTree = "<group>"; };
-		9E4ACB762AC984E000B0552E /* MockSearchMarketUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchMarketUsecase.swift; sourceTree = "<group>"; };
-		9E4ACB772AC984E000B0552E /* MockSearchMarketeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchMarketeRepository.swift; sourceTree = "<group>"; };
+		9E4ACB762AC984E000B0552E /* MockSearchPostsUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchPostsUsecase.swift; sourceTree = "<group>"; };
+		9E4ACB772AC984E000B0552E /* MockSearchPostsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchPostsRepository.swift; sourceTree = "<group>"; };
 		9E4ACB782AC984E000B0552E /* MockSearchPostsRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchPostsRemote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -807,7 +807,7 @@
 			isa = PBXGroup;
 			children = (
 				9E4ACB6A2AC984E000B0552E /* RequestBuilderTest.swift */,
-				9E4ACB6B2AC984E000B0552E /* MarketPriceRequestTest.swift */,
+				9E4ACB6B2AC984E000B0552E /* PostsRequestTest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -843,8 +843,8 @@
 		9E4ACB752AC984E000B0552E /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				9E4ACB762AC984E000B0552E /* MockSearchMarketUsecase.swift */,
-				9E4ACB772AC984E000B0552E /* MockSearchMarketeRepository.swift */,
+				9E4ACB762AC984E000B0552E /* MockSearchPostsUsecase.swift */,
+				9E4ACB772AC984E000B0552E /* MockSearchPostsRepository.swift */,
 				9E4ACB782AC984E000B0552E /* MockSearchPostsRemote.swift */,
 			);
 			path = Search;
@@ -1069,14 +1069,14 @@
 				9E4ACB7A2AC984E000B0552E /* BaseViewModelTest.swift in Sources */,
 				9E4ACB7F2AC984E000B0552E /* SearchPostsTest.swift in Sources */,
 				9E4ACB7D2AC984E000B0552E /* CacheStack.swift in Sources */,
-				9E4ACB822AC984E000B0552E /* MarketPriceRequestTest.swift in Sources */,
+				9E4ACB822AC984E000B0552E /* PostsRequestTest.swift in Sources */,
 				9E4ACB8A2AC984E000B0552E /* MockSearchPostsRemote.swift in Sources */,
-				9E4ACB882AC984E000B0552E /* MockSearchMarketUsecase.swift in Sources */,
+				9E4ACB882AC984E000B0552E /* MockSearchPostsUsecase.swift in Sources */,
 				9E4ACB842AC984E000B0552E /* PostsRepositoryMock.swift in Sources */,
 				9E4ACB812AC984E000B0552E /* RequestBuilderTest.swift in Sources */,
 				9E4ACB792AC984E000B0552E /* DummyEndpoint.swift in Sources */,
 				9E4ACB872AC984E000B0552E /* MockNetworkTarget.swift in Sources */,
-				9E4ACB892AC984E000B0552E /* MockSearchMarketeRepository.swift in Sources */,
+				9E4ACB892AC984E000B0552E /* MockSearchPostsRepository.swift in Sources */,
 				9E4ACB7B2AC984E000B0552E /* HomeViewModelTest.swift in Sources */,
 				9E4ACB832AC984E000B0552E /* PostsRemoteMock.swift in Sources */,
 			);
