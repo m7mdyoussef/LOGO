@@ -3,7 +3,8 @@ import Foundation
 import Combine
 
 protocol SignInViewModelProtocol:ObservableObject {
-    func signIn()
+    func signIn(user_Name: String,
+                passwrd: String)
 }
 
 protocol DefaultSignInViewModel: SignInViewModelProtocol { }
@@ -64,22 +65,6 @@ extension SignInViewModel: DataFlowProtocol{
     }
     
     private func bindData(){
-//        userNameValidPublisher
-//            .receive(on: WorkScheduler.mainThread)
-//            .dropFirst()
-//            .map{ $0 ? "" : "User name is missing" }
-//            .assign(to: \.errorMessage, on: self)
-//            .store(in: subscriber)
-//
-//        passwordValidPublisher
-//            .receive(on: WorkScheduler.mainThread)
-//            .dropFirst()
-//            .map{ $0 ? "" : "password is missing" }
-//            .assign(to: \.errorMessage, on: self)
-//            .store(in: subscriber)
-        
-      
-        
         Publishers.CombineLatest(userNameValidPublisher
                                   ,passwordValidPublisher)
         .map{ userName, password in
@@ -90,9 +75,9 @@ extension SignInViewModel: DataFlowProtocol{
         .store(in: subscriber)
     }
     
-    func signIn() {
-        self.callWithProgress(argument: self.signInUsecase.execute(userName: userName,
-                                                                   password: password)) { [weak self] data in
+    func signIn(user_Name: String, passwrd: String) {
+        self.callWithProgress(argument: self.signInUsecase.execute(userName: user_Name,
+                                                                   password: passwrd)) { [weak self] data in
             guard let self = self else {return}
             self.userData = data
             

@@ -9,7 +9,7 @@ final class DummyTarget: NetworkTarget {
     
     var path: String? = "test/test"
     
-    var methodType: LOGO.HTTPMethod = .get
+    var methodType: LOGO.HTTPMethod = .post
     
     var queryParams: [String : String]? = ["item": "item"]
     

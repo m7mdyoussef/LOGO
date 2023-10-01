@@ -25,3 +25,24 @@ extension User: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+extension User {
+    // make image url safe
+    func safeImageURL() -> String {
+        guard let url = self.image else {return .empty}
+        let safeURL = url.trimmingString()
+        return safeURL
+    }
+}
+
+extension User {
+    static let mockUser = User.init(id: 15,
+                                    username: "joe",
+                                    email: "joe@m.com",
+                                    firstName: "mohamed",
+                                    lastName: "youssef",
+                                    gender: "male",
+                                    image: "https://robohash.org/autquiaut.png",
+                                    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZyIsImlhdCI6MTY5NjE2MzU1NiwiZXhwIjoxNjk2MTY3MTU2fQ.UnFV4ucy3xwQN0tJmVXN7QMaDjpk465C7eht9QsR3dg")
+    
+}
