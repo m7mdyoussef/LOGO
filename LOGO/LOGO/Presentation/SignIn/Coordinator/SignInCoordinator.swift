@@ -39,8 +39,7 @@ extension SignInCoordinator {
         var content: some View {
             switch route {
             case .home:
-                navView()
-               // HomeView()
+                HomeView()
             }
         }
         

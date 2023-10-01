@@ -1,9 +1,6 @@
 {
   "colors" : [
     {
-      "idiom" : "universal"
-    },
-    {
       "color" : {
         "color-space" : "extended-srgb",
         "components" : {
