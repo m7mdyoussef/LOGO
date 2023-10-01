@@ -1,9 +1,3 @@
-//
-//  HomeViewModel.swift
-//  CleanArchProject
-//
-//  Created by mohamed youssef on 28/09/2023.
-//
 
 import Foundation
 import Combine
