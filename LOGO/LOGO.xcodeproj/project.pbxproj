@@ -103,6 +103,9 @@
 		9E4ACB882AC984E000B0552E /* MockSearchPostsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB762AC984E000B0552E /* MockSearchPostsUsecase.swift */; };
 		9E4ACB892AC984E000B0552E /* MockSearchPostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB772AC984E000B0552E /* MockSearchPostsRepository.swift */; };
 		9E4ACB8A2AC984E000B0552E /* MockSearchPostsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB782AC984E000B0552E /* MockSearchPostsRemote.swift */; };
+		9E4ACB8C2AC99ABA00B0552E /* SignInViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB8B2AC99ABA00B0552E /* SignInViewModelTest.swift */; };
+		9E4ACB8F2AC99C8F00B0552E /* SignInRemoteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB8E2AC99C8F00B0552E /* SignInRemoteMock.swift */; };
+		9E4ACB912AC9A43400B0552E /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB902AC9A43400B0552E /* UserTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +225,9 @@
 		9E4ACB762AC984E000B0552E /* MockSearchPostsUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchPostsUsecase.swift; sourceTree = "<group>"; };
 		9E4ACB772AC984E000B0552E /* MockSearchPostsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchPostsRepository.swift; sourceTree = "<group>"; };
 		9E4ACB782AC984E000B0552E /* MockSearchPostsRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSearchPostsRemote.swift; sourceTree = "<group>"; };
+		9E4ACB8B2AC99ABA00B0552E /* SignInViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTest.swift; sourceTree = "<group>"; };
+		9E4ACB8E2AC99C8F00B0552E /* SignInRemoteMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteMock.swift; sourceTree = "<group>"; };
+		9E4ACB902AC9A43400B0552E /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -782,6 +788,7 @@
 			children = (
 				9E4ACB602AC984E000B0552E /* BaseViewModelTest.swift */,
 				9E4ACB612AC984E000B0552E /* HomeViewModelTest.swift */,
+				9E4ACB8B2AC99ABA00B0552E /* SignInViewModelTest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -799,6 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				9E4ACB672AC984E000B0552E /* SearchPostsTest.swift */,
+				9E4ACB902AC9A43400B0552E /* UserTest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -815,6 +823,7 @@
 		9E4ACB6C2AC984E000B0552E /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				9E4ACB8D2AC99C6200B0552E /* SignIn */,
 				9E4ACB6D2AC984E000B0552E /* Posts */,
 				9E4ACB732AC984E000B0552E /* NetworkTarget */,
 				9E4ACB752AC984E000B0552E /* Search */,
@@ -848,6 +857,14 @@
 				9E4ACB782AC984E000B0552E /* MockSearchPostsRemote.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		9E4ACB8D2AC99C6200B0552E /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9E4ACB8E2AC99C8F00B0552E /* SignInRemoteMock.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1064,14 +1081,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4ACB7C2AC984E000B0552E /* CoreDataTest.swift in Sources */,
+				9E4ACB8F2AC99C8F00B0552E /* SignInRemoteMock.swift in Sources */,
 				9E4ACB852AC984E000B0552E /* PostsUseCaseMock.swift in Sources */,
 				9E4ACA7D2AC95EEA00B0552E /* LOGOTests.swift in Sources */,
 				9E4ACB7A2AC984E000B0552E /* BaseViewModelTest.swift in Sources */,
 				9E4ACB7F2AC984E000B0552E /* SearchPostsTest.swift in Sources */,
 				9E4ACB7D2AC984E000B0552E /* CacheStack.swift in Sources */,
 				9E4ACB822AC984E000B0552E /* PostsRequestTest.swift in Sources */,
+				9E4ACB912AC9A43400B0552E /* UserTest.swift in Sources */,
 				9E4ACB8A2AC984E000B0552E /* MockSearchPostsRemote.swift in Sources */,
 				9E4ACB882AC984E000B0552E /* MockSearchPostsUsecase.swift in Sources */,
+				9E4ACB8C2AC99ABA00B0552E /* SignInViewModelTest.swift in Sources */,
 				9E4ACB842AC984E000B0552E /* PostsRepositoryMock.swift in Sources */,
 				9E4ACB812AC984E000B0552E /* RequestBuilderTest.swift in Sources */,
 				9E4ACB792AC984E000B0552E /* DummyEndpoint.swift in Sources */,

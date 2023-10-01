@@ -47,10 +47,8 @@ struct SignInView: Coordinatable {
                         AuthTextView(textValue: $viewModel.password, isSecured: $viewModel.isSecured, isPassword:true, title: "Enter your password", authHeader: "password",keyboardType: .default)
                                         
                         Button {
-                            print("Do login")
-                            viewModel.signIn()
+                            viewModel.signIn(user_Name: viewModel.userName, passwrd: viewModel.password)
                             
-                           
                         }label: {
                             Text ("Login")
                         }
