@@ -17,5 +17,11 @@ extension DIContainer {
          register(type: PostsCasheRepositoryProtocol.self, component: PostsCacheRepository())
          register(type: PostUsecaseProtocol.self, component: PostUsecase())
         
+        // Search Market
+         register(type: SearchPostsDataRemoteProtocol.self, component: SearchPostsDataRemote())
+         register(type: SearchPostsRepositoryProtocol.self, component: SearchPostsRepository())
+         register(type: SearchPostUsecaseProtocol.self, component: SearchPostsUsecase())
+
+        
     }
 }

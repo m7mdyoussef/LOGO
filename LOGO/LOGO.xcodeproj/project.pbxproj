@@ -85,6 +85,10 @@
 		9E4ACB4B2AC9808600B0552E /* PostUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB4A2AC9808600B0552E /* PostUsecase.swift */; };
 		9E4ACB522AC9809600B0552E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB4E2AC9809600B0552E /* HomeViewModel.swift */; };
 		9E4ACB532AC9809600B0552E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB512AC9809600B0552E /* HomeView.swift */; };
+		9E4ACB562AC9824800B0552E /* SearchPostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB542AC9824800B0552E /* SearchPostsRepository.swift */; };
+		9E4ACB572AC9824800B0552E /* PostsCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB552AC9824800B0552E /* PostsCacheRepository.swift */; };
+		9E4ACB592AC9825200B0552E /* SearchPostsDataRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB582AC9825200B0552E /* SearchPostsDataRemote.swift */; };
+		9E4ACB5B2AC9826D00B0552E /* SearchPostsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB5A2AC9826D00B0552E /* SearchPostsUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +190,10 @@
 		9E4ACB4A2AC9808600B0552E /* PostUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostUsecase.swift; sourceTree = "<group>"; };
 		9E4ACB4E2AC9809600B0552E /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9E4ACB512AC9809600B0552E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9E4ACB542AC9824800B0552E /* SearchPostsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPostsRepository.swift; sourceTree = "<group>"; };
+		9E4ACB552AC9824800B0552E /* PostsCacheRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsCacheRepository.swift; sourceTree = "<group>"; };
+		9E4ACB582AC9825200B0552E /* SearchPostsDataRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPostsDataRemote.swift; sourceTree = "<group>"; };
+		9E4ACB5A2AC9826D00B0552E /* SearchPostsUsecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPostsUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +463,7 @@
 			children = (
 				9E4ACB322AC97A1900B0552E /* SignInUsecase.swift */,
 				9E4ACB4A2AC9808600B0552E /* PostUsecase.swift */,
+				9E4ACB5A2AC9826D00B0552E /* SearchPostsUsecase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -464,6 +473,8 @@
 			children = (
 				9E4ACB2C2AC979DC00B0552E /* SignInRepository.swift */,
 				9E4ACB442AC9805B00B0552E /* PostsRepository.swift */,
+				9E4ACB552AC9824800B0552E /* PostsCacheRepository.swift */,
+				9E4ACB542AC9824800B0552E /* SearchPostsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -473,6 +484,7 @@
 			children = (
 				9E4ACB2E2AC979E300B0552E /* SignInRemote.swift */,
 				9E4ACB462AC9806600B0552E /* PostsRemote.swift */,
+				9E4ACB582AC9825200B0552E /* SearchPostsDataRemote.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -883,6 +895,7 @@
 				9E4ACB1A2AC9688200B0552E /* NetworkTarget + Extension.swift in Sources */,
 				9E4ACAD32AC9632A00B0552E /* MessageHelper.swift in Sources */,
 				9E4ACAEB2AC965AD00B0552E /* SpinnerView.swift in Sources */,
+				9E4ACB572AC9824800B0552E /* PostsCacheRepository.swift in Sources */,
 				9E4ACAB52AC9626B00B0552E /* Color.swift in Sources */,
 				9E4ACACE2AC9632A00B0552E /* Navigation + Exetnsion.swift in Sources */,
 				9E4ACB2D2AC979DC00B0552E /* SignInRepository.swift in Sources */,
@@ -892,6 +905,8 @@
 				9E4ACACC2AC9632A00B0552E /* Publisher + Extension.swift in Sources */,
 				9E4ACAB12AC9626B00B0552E /* FontManager.swift in Sources */,
 				9E4ACB042AC967B700B0552E /* HTTPMethod.swift in Sources */,
+				9E4ACB592AC9825200B0552E /* SearchPostsDataRemote.swift in Sources */,
+				9E4ACB5B2AC9826D00B0552E /* SearchPostsUsecase.swift in Sources */,
 				9E4ACB532AC9809600B0552E /* HomeView.swift in Sources */,
 				9E4ACACD2AC9632A00B0552E /* URL + Extension.swift in Sources */,
 				9E4ACB252AC9694900B0552E /* CoordinatorProtocol.swift in Sources */,
@@ -911,6 +926,7 @@
 				9E4ACAA72AC9612500B0552E /* CoreDataSavePublisher.swift in Sources */,
 				9E4ACB522AC9809600B0552E /* HomeViewModel.swift in Sources */,
 				9E4ACB2B2AC9795100B0552E /* AppDependencyContainer + Injection.swift in Sources */,
+				9E4ACB562AC9824800B0552E /* SearchPostsRepository.swift in Sources */,
 				9E4ACA672AC95EE900B0552E /* LOGOApp.swift in Sources */,
 				9E4ACB292AC9794A00B0552E /* AppDependencyContainer.swift in Sources */,
 				9E4ACAE52AC9656000B0552E /* Cancelable.swift in Sources */,
