@@ -2,7 +2,12 @@
 import Foundation
 import Combine
 
+/// SignInViewModelProtocol will be conformed from SignInViewModel
 protocol SignInViewModelProtocol:ObservableObject {
+    /// sign in method will be Stubbed to execute viewModel custom useCases method to complete signIn Api
+    /// - Parameters:
+    ///   - user_Name: userName is a String data for user that must be exist in Server side
+    ///   - passwrd: passwrd is a String data for user that must be exist in Server side
     func signIn(user_Name: String,
                 passwrd: String)
 }
@@ -19,19 +24,16 @@ final class SignInViewModel:DefaultViewModel, DefaultSignInViewModel {
     @Published var isSecured = true
     @Published var enableSignIn = false
     
-    @Published var userData: User?
-    
     var navigateSubject = PassthroughSubject<SignInView.Routes, Never>()
+    var signInState = CurrentValueSubject<Bool, Never>(false)
     
     private var userNameValidPublisher: AnyPublisher<Bool, Never>{
-        
         return $userName
             .map{!$0.isEmpty}
             .eraseToAnyPublisher()
     }
     
     private var passwordValidPublisher: AnyPublisher<Bool, Never>{
-        
         return $password
             .map{!$0.isEmpty}
             .eraseToAnyPublisher()
@@ -41,12 +43,10 @@ final class SignInViewModel:DefaultViewModel, DefaultSignInViewModel {
         self.signInUsecase = signInUsecase
 
     }
-
 }
 
 
 extension SignInViewModel: DataFlowProtocol{
-    
     typealias InputType = Load
     
     enum Load {
@@ -60,10 +60,12 @@ extension SignInViewModel: DataFlowProtocol{
         }
     }
     
+    /// navigation method to home screen
     func navigateToHome() {
         self.navigateSubject.send(.home)
     }
     
+    /// bind Auth text filds together to ensure that both fields are containning data then enable of disable Sign In button
     private func bindData(){
         Publishers.CombineLatest(userNameValidPublisher
                                   ,passwordValidPublisher)
@@ -79,8 +81,8 @@ extension SignInViewModel: DataFlowProtocol{
         self.callWithProgress(argument: self.signInUsecase.execute(userName: user_Name,
                                                                    password: passwrd)) { [weak self] data in
             guard let self = self else {return}
-            self.userData = data
-            
+            self.signInState.send(true)
+
         }
     }
     

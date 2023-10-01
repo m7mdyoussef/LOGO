@@ -2,13 +2,13 @@
 import SwiftUI
 
 extension Color {
-    static let darkBlue  = Color(Color.KeyType.darkBlue.rawValue)
-    static let lightBlue  = Color(Color.KeyType.lightBlue.rawValue)
-    static let lightGreen = Color(Color.KeyType.lightGreen.rawValue)
+    static let primaryColor = Color(Color.KeyType.primaryColor.rawValue)
+    static let lightGreyColor = Color(Color.KeyType.lightGreyColor.rawValue)
+    static let darkGrey = Color(Color.KeyType.darkGrey.rawValue)
 
     enum KeyType: String {
-        case darkBlue = "DarkGray"
-        case lightBlue = "LightBLue"
-        case lightGreen = "LightGreen"
+        case primaryColor = "primaryColor"
+        case lightGreyColor = "lightGreyColor"
+        case darkGrey = "darkGrey"
     }
 }
