@@ -9,6 +9,8 @@ struct PostListView: View {
     @Binding var isLoading: Bool
     @Binding var cashedDataPresented: Bool
     
+    let imageNames: [String] = [Assets.dish1, Assets.dish2, Assets.dish3, Assets.dish4]
+    
     //body
     var body: some View {
         ScrollView {
@@ -28,27 +30,16 @@ struct PostListView: View {
                                 Text(Constants.PlaceHolder.PostTime).font(.subheadline).foregroundColor(.gray)
                             }//: VStack
                         }//: HStack
-
-                        Text(post.body ?? "")
-                            .foregroundColor(Color.darkGrey)
-                            .lineLimit(nil)
                         
-//                        if let attributedString = attributedText(for: post.body ?? "", rangeText:viewModel.searchText) {
-//                            Text(attributedString)
-//                                .lineLimit(nil)
-//                        } else {
-//                            Text(post.body ?? "")
-//                        }
-//
-                        GeometryReader { geometry in
-                            Image(Assets.dish1)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width, height: geometry.size.height)
-                                .clipped()
-                                .cornerRadius(8)
-                        }//: GeometryReader
-                        .frame(minHeight: 150, idealHeight: 250)
+                        if let body = post.body, postType == .search {
+                            CustomizedText(apiResponse: body, keyword: viewModel.searchText)
+                        } else {
+                            Text(post.body ?? "").foregroundColor(Color.darkGrey)
+                        }
+                        
+                        let randomImageCount = getRandomCountInRange(min: 1, max: imageNames.count)
+                        let randomImages = getRandomImages(count: randomImageCount)
+                        CustomizedGeometry(imageNames: randomImages)
                     }//: VStack
                     .padding()
                     
@@ -74,58 +65,35 @@ struct PostListView: View {
         }//: ScrollView
     }
     
+    //functions
     
+    /// returns a random count number within min - max range
+    /// - Parameters:
+    ///   - min: min range value
+    ///   - max: max range value
+    /// - Returns: returns a random number within min - max range
+    func getRandomCountInRange(min: Int, max: Int) -> Int {
+        return Int.random(in: min...max)
+    }
+    
+    /// returns an array of images with random count
+    /// - Parameter count: random count needed for sizing the array
+    /// - Returns: random Images array
+    func getRandomImages(count: Int) -> [String] {
+        var randomImages: [String] = []
+        
+        while randomImages.count < count {
+            let randomIndex = Int.random(in: 0..<imageNames.count)
+            let randomImage = imageNames[randomIndex]
+            
+            // Check if the randomImage is not already in the array
+            if !randomImages.contains(randomImage) {
+                randomImages.append(randomImage)
+            }
+        }
+        return randomImages
+    }
 }
 
-
-//extension PostListView{
-//    func attributedText(for body: String , rangeText:String) -> NSAttributedString? {
-//        let attributedString = NSMutableAttributedString(string: body)
-//        let range = (body as NSString).range(of: rangeText)
-//
-//        if range.location != NSNotFound {
-//            attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: range)
-//            attributedString.addAttribute(.foregroundColor, value: UIColor.blue, range: range) // Change the color to your desired color
-//
-//            return attributedString
-//        } else {
-//            return nil
-//        }
-//    }
-//}
-//
-
-
-
-//
-//
-//
-//extension NSMutableAttributedString {
-//    func bold(_ text: String) -> NSMutableAttributedString{
-//        let fullRange = NSRange(location: 0, length: self.length)
-//        
-//        if let range = self.string.range(of: text) {
-//            let nsRange = NSRange(range, in: self.string)
-//            
-//            // Create two attributed strings, one for the text inside the range and one for the text outside
-//            let attributedStringInsideRange = NSMutableAttributedString(string: self.string)
-//            attributedStringInsideRange.addAttribute(.foregroundColor, value: UIColor.red, range: nsRange)
-//            attributedStringInsideRange.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: nsRange)
-//            
-//            let attributedStringOutsideRange = NSMutableAttributedString(attributedString: self)
-//            attributedStringOutsideRange.addAttribute(.foregroundColor, value: UIColor.blue, range: NSRange(location: 0, length: self.length))
-//            attributedStringOutsideRange.removeAttribute(.font, range: fullRange)
-//            
-//            // Combine the two attributed strings into one
-//            attributedStringOutsideRange.replaceCharacters(in: nsRange, with: attributedStringInsideRange)
-//            
-//            // Update the current attributed string
-//            self.setAttributedString(attributedStringOutsideRange)
-//            
-//        }
-//        return self
-//    }
-//
-//}
 
 

@@ -11,6 +11,6 @@ enum Assets {
     static let dish2: String = "dish2"
     static let dish3: String = "dish3"
     static let dish4: String = "dish4"
+    static let close: String = "close"
 
-    
 }
