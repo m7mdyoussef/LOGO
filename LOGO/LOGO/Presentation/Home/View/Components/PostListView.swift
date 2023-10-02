@@ -9,6 +9,8 @@ struct PostListView: View {
     @Binding var isLoading: Bool
     @Binding var cashedDataPresented: Bool
     
+    @State private var isUserImageTapped = false
+    
     let imageNames: [String] = [Assets.dish1, Assets.dish2, Assets.dish3, Assets.dish4]
     
     //body
@@ -24,6 +26,9 @@ struct PostListView: View {
                                 .clipShape (Circle())
                                 .frame(width: 40, height: 40)
                                 .clipped()
+                                .onTapGesture {
+                                    isUserImageTapped = true
+                                }
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(Constants.PlaceHolder.PostUserName).font(.headline)
                                     .fontWeight(.medium)
@@ -39,7 +44,7 @@ struct PostListView: View {
                         
                         let randomImageCount = getRandomCountInRange(min: 1, max: imageNames.count)
                         let randomImages = getRandomImages(count: randomImageCount)
-                        CustomizedGeometry(imageNames: randomImages)
+                        CustomizedGeometry(imageNames: randomImages, viewMode: viewModel)
                     }//: VStack
                     .padding()
                     
@@ -62,6 +67,14 @@ struct PostListView: View {
                         }
                 }
             }//: LazyVStack
+            .sheet(isPresented: $isUserImageTapped) {
+                Image(Assets.profileImg)
+                    .resizable()
+                    .scaledToFit()
+                    .onTapGesture {
+                        isUserImageTapped = false
+                    }
+            }
         }//: ScrollView
     }
     

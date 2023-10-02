@@ -18,7 +18,8 @@ struct LOGOApp: App {
     var body: some Scene {
         WindowGroup {
             if isLoggedIn{
-                HomeView()
+                HomeCoordinator(viewModel: HomeViewModel())
+                    .environment(\.managedObjectContext, coreDataManager.container.viewContext)
             }else{
                 SignInCoordinator(viewModel: SignInViewModel())
                     .environment(\.managedObjectContext, coreDataManager.container.viewContext)

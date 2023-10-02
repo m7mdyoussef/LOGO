@@ -16,6 +16,8 @@ final class HomeViewModel: DefaultViewModel, DefaultHomeViewModel {
     private let searchPostUsecase: SearchPostUsecaseProtocol
     private let cacherepository: PostsCasheRepositoryProtocol
     
+    var navigateSubject = PassthroughSubject<HomeView.Routes, Never>()
+
     private var limit: Int = 10
     private var skip: Int = 0
     
@@ -46,6 +48,11 @@ extension HomeViewModel: DataFlowProtocol {
             self.bindData()
             self.callFirstTime()
         }
+    }
+    
+    /// showing image with coordinator
+    func showImageWith(imageName:String,isImageTapped:Bool) {
+        self.navigateSubject.send(.showImg(imageName: imageName, isImageTapped: isImageTapped))
     }
     
     /// bind search text fild to call searchPostsData with its value
