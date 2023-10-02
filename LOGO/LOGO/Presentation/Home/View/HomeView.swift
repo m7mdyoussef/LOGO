@@ -1,9 +1,11 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView: Coordinatable {
+    typealias Route = Routes
+    
     //Properties
-    @StateObject var viewModel: HomeViewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
     @State private var isLoggoVisible = true
     @State private var isSearchBarVisible = false
     @State private var shouldShowDropdown = false
@@ -133,11 +135,18 @@ extension HomeView {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel())
     }
 }
 
 enum PostType{
     case posts
     case search
+}
+
+extension HomeView {
+    enum Routes: Routing {
+        case showImg(imageName: String,
+                     isImageTapped: Bool)
+    }
 }

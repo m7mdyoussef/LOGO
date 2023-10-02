@@ -10,6 +10,6 @@ protocol DestinationProtocol: Equatable {
 protocol CoordinatorProtocol: View {
   associatedtype MainContent: Coordinatable
   associatedtype Destination: DestinationProtocol
-  var signInView: MainContent { get }
+  var mainView: MainContent { get }
   var activeRoute: Destination? { get }
 }

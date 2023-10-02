@@ -106,6 +106,8 @@
 		9E4ACB932AC9F11E00B0552E /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB922AC9F11E00B0552E /* PostListView.swift */; };
 		9EE7BFFA2ACAEC8E00457A09 /* CustomizedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */; };
 		9EE7BFFC2ACAECB400457A09 /* CustomizedGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */; };
+		9EE7BFFE2ACB4D6300457A09 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7BFFD2ACB4D6300457A09 /* HomeCoordinator.swift */; };
+		9EFA27582ACB5A84000E764C /* ImageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFA27572ACB5A84000E764C /* ImageOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +230,8 @@
 		9E4ACB922AC9F11E00B0552E /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedText.swift; sourceTree = "<group>"; };
 		9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedGeometry.swift; sourceTree = "<group>"; };
+		9EE7BFFD2ACB4D6300457A09 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		9EFA27572ACB5A84000E764C /* ImageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -705,8 +709,8 @@
 		9E4ACB392AC97A4400B0552E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EFA275A2ACB5B29000E764C /* Components */,
 				9E4ACB3B2AC97A4400B0552E /* SignInView.swift */,
-				9E4ACB3C2AC97A4400B0552E /* AuthTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -732,6 +736,7 @@
 		9E4ACB4F2AC9809600B0552E /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				9EE7BFFD2ACB4D6300457A09 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -739,11 +744,8 @@
 		9E4ACB502AC9809600B0552E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EFA27592ACB5B04000E764C /* Components */,
 				9E4ACB512AC9809600B0552E /* HomeView.swift */,
-				9E4ACB3A2AC97A4400B0552E /* SearchBar.swift */,
-				9E4ACB922AC9F11E00B0552E /* PostListView.swift */,
-				9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */,
-				9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,6 +851,26 @@
 				9E4ACB8E2AC99C8F00B0552E /* SignInRemoteMock.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		9EFA27592ACB5B04000E764C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E4ACB3A2AC97A4400B0552E /* SearchBar.swift */,
+				9E4ACB922AC9F11E00B0552E /* PostListView.swift */,
+				9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */,
+				9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */,
+				9EFA27572ACB5A84000E764C /* ImageOverlayView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9EFA275A2ACB5B29000E764C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E4ACB3C2AC97A4400B0552E /* AuthTextView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1035,6 +1057,7 @@
 				9E4ACA732AC95EEA00B0552E /* LOGO.xcdatamodeld in Sources */,
 				9E4ACAF02AC9664C00B0552E /* PlaceholderModifier.swift in Sources */,
 				9E4ACB412AC97A4400B0552E /* AuthTextView.swift in Sources */,
+				9EE7BFFE2ACB4D6300457A09 /* HomeCoordinator.swift in Sources */,
 				9E4ACAEC2AC965AD00B0552E /* SpinnerViewIndicator.swift in Sources */,
 				9E4ACB242AC9694900B0552E /* AppRouter.swift in Sources */,
 				9E4ACAC92AC9632A00B0552E /* Double + Extension.swift in Sources */,
@@ -1045,6 +1068,7 @@
 				9E4ACACF2AC9632A00B0552E /* Binding+Utils.swift in Sources */,
 				9E4ACAF92AC9673300B0552E /* ViewDidLoadModifier.swift in Sources */,
 				9E4ACAA72AC9612500B0552E /* CoreDataSavePublisher.swift in Sources */,
+				9EFA27582ACB5A84000E764C /* ImageOverlayView.swift in Sources */,
 				9E4ACB522AC9809600B0552E /* HomeViewModel.swift in Sources */,
 				9E4ACB2B2AC9795100B0552E /* AppDependencyContainer + Injection.swift in Sources */,
 				9E4ACB932AC9F11E00B0552E /* PostListView.swift in Sources */,
