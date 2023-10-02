@@ -5,7 +5,7 @@ import SwiftUI
 struct LOGOApp: App {
 
     //Properties
-    @AppStorage("isLoggedIn") var isLoggedIn:Bool = false
+    @AppStorage(Constants.Cashe.isLoggedIn) var isLoggedIn:Bool = false
     let coreDataManager = CoreDataManager.preview
     
     

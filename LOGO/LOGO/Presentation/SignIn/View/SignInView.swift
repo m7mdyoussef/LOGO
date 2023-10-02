@@ -4,10 +4,9 @@ import SwiftUI
 import Combine
 
 struct SignInView: Coordinatable {
-    
+    //properties
     typealias Route = Routes
-    
-    @AppStorage("isLoggedIn") var isLoggedIn:Bool = false
+    @AppStorage(Constants.Cashe.isLoggedIn) var isLoggedIn:Bool = false
     @StateObject var viewModel: SignInViewModel
     
     enum Constant {
@@ -18,61 +17,59 @@ struct SignInView: Coordinatable {
     @State private var presentAlert = true
     @State private var alertMesagee: String = ""
 
-
-
     let subscriber = Cancelable()
     
+    //body
     var body: some View {
         NavigationView {
             ZStack{
                 VStack{
                     VStack(alignment: .center, spacing: 50.0){
-                        Image("loginPanner")
+                        Image(Assets.loginPanner)
                             .resizable()
                             .scaledToFill()
                             .frame(minWidth: 375, maxHeight: 440, alignment: .center)
 
-                        Text("Welcome")
-                            .foregroundColor(Color("primaryColor"))
+                        Text(Constants.Auth.welcome)
+                            .foregroundColor(Color.primaryColor)
                             .font(.title3)
                             .fontWeight(.bold)
-                    }
-                    
+                    }//: VStack
                     Spacer()
                     
                     LazyVStack(spacing: 20){
                                             
-                        AuthTextView(textValue: $viewModel.userName, isSecured: $viewModel.isSecured, isPassword:false, title: "Enter your user name", authHeader: "User Name",keyboardType: .emailAddress)
+                        AuthTextView(textValue: $viewModel.userName, isSecured: $viewModel.isSecured, isPassword:false, title: Constants.Auth.userNamePlaceHolder, authHeader: Constants.Auth.userNameTitle,keyboardType: .emailAddress)
 
-                        AuthTextView(textValue: $viewModel.password, isSecured: $viewModel.isSecured, isPassword:true, title: "Enter your password", authHeader: "password",keyboardType: .default)
+                        AuthTextView(textValue: $viewModel.password, isSecured: $viewModel.isSecured, isPassword:true, title: Constants.Auth.passwordPlaceHolder, authHeader: Constants.Auth.passwordTitle,keyboardType: .default)
                                         
                         Button {
                             viewModel.signIn(user_Name: viewModel.userName, passwrd: viewModel.password)
                             
                         }label: {
-                            Text ("Login")
-                        }
+                            Text (Constants.Auth.SignIn)
+                        }//: Button
                         .disabled(!viewModel.enableSignIn)
                         .padding(20)
                         .font(.system(size: 17, design: .rounded))
                         .font(.title2)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color .white)
-                        .background(viewModel.enableSignIn ? Color("primaryColor") : Color.gray)
+                        .background(viewModel.enableSignIn ? Color.primaryColor : Color.gray)
                         .cornerRadius(.infinity)
-                    }
+                    }//: LazyVStack
                     .padding(.horizontal, 16)
                     
                     Spacer()
 
-                }
+                }//: VStack
                 .ignoresSafeArea(.all, edges: [.top])
                 .onViewDidLoad {
                     self.viewModel.apply(.onAppear)
                 }
                 
                 if !presentAlert{
-                    self.showAlert("Error", alertMesagee)
+                    self.showAlert(Constants.Alert.Error, alertMesagee)
                 }
                 
                 if isLoading {
@@ -83,21 +80,21 @@ struct SignInView: Coordinatable {
                         ActivityIndicator(style: .large, animate: .constant(true))
                     }
                 }
-                
-            }
-            
-        }
+            }//: ZStack
+        }//: NavigationView
         .onAppear(perform: handleState)
     }
 }
 
 extension SignInView {
+    /// Routes enum for SignIn View contains all navigation cases that will be accessed from the coordinator
     enum Routes: Routing {
         case home
     }
 }
 
 extension SignInView {
+    /// handle Api response state to show / hide alerts and how / hide loader
     private func handleState() {
         self.viewModel.loadingState
             .receive(on: WorkScheduler.mainThread)
@@ -126,8 +123,13 @@ extension SignInView {
 }
 
 extension SignInView {
+    /// show Alert with title and message
+    /// - Parameters:
+    ///   - title: alert title shows general description of the showing reason
+    ///   - message: alert message shows a description of showing alert
+    /// - Returns: returns the alert view with alert components
     func showAlert(_ title: String, _ message: String) -> some View {
-        CustomAlertView(title: title, message: message, primaryButtonLabel: "Retry", primaryButtonAction: {
+        CustomAlertView(title: title, message: message, primaryButtonLabel: Constants.Alert.Retry, primaryButtonAction: {
             self.presentAlert = true
         })
         .previewLayout(.sizeThatFits)

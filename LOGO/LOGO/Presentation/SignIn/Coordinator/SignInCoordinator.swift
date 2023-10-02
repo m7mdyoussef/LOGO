@@ -2,16 +2,15 @@
 import SwiftUI
 import Combine
 
+/// SignIn Coordinator which is responsable for all signIn Flows of navigation
 struct SignInCoordinator: CoordinatorProtocol {
-    
+    //Properties
     @StateObject var viewModel: SignInViewModel
     @State var activeRoute:Destination?
     @State var transition: Transition?
-
-    @State private var isLoaded: Bool = Bool()
-
     let subscriber = Cancelable()
 
+    //body
     var body: some View {
         signInView
             .route(to: $activeRoute)
@@ -31,6 +30,7 @@ struct SignInCoordinator: CoordinatorProtocol {
 }
 
 extension SignInCoordinator {
+    /// Destination struct is to detect the content will be navigated to and the transition type of navigation
     struct Destination: DestinationProtocol {
         
         var route: SignInView.Routes

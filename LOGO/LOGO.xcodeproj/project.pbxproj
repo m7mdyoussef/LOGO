@@ -18,9 +18,6 @@
 		9E4ACAA52AC9612500B0552E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAA12AC9612500B0552E /* CoreDataManager.swift */; };
 		9E4ACAA62AC9612500B0552E /* CoreDataFetchPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAA22AC9612500B0552E /* CoreDataFetchPublisher.swift */; };
 		9E4ACAA72AC9612500B0552E /* CoreDataSavePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAA32AC9612500B0552E /* CoreDataSavePublisher.swift */; };
-		9E4ACAB12AC9626B00B0552E /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAA92AC9626A00B0552E /* FontManager.swift */; };
-		9E4ACAB22AC9626B00B0552E /* FontNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAAA2AC9626A00B0552E /* FontNameManager.swift */; };
-		9E4ACAB32AC9626B00B0552E /* arialbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4ACAAC2AC9626A00B0552E /* arialbold.ttf */; };
 		9E4ACAB42AC9626B00B0552E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAAE2AC9626B00B0552E /* Assets.swift */; };
 		9E4ACAB52AC9626B00B0552E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAB02AC9626B00B0552E /* Color.swift */; };
 		9E4ACAC62AC9632A00B0552E /* Optional + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACAB72AC9632A00B0552E /* Optional + Extension.swift */; };
@@ -106,6 +103,9 @@
 		9E4ACB8C2AC99ABA00B0552E /* SignInViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB8B2AC99ABA00B0552E /* SignInViewModelTest.swift */; };
 		9E4ACB8F2AC99C8F00B0552E /* SignInRemoteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB8E2AC99C8F00B0552E /* SignInRemoteMock.swift */; };
 		9E4ACB912AC9A43400B0552E /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB902AC9A43400B0552E /* UserTest.swift */; };
+		9E4ACB932AC9F11E00B0552E /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4ACB922AC9F11E00B0552E /* PostListView.swift */; };
+		9EE7BFFA2ACAEC8E00457A09 /* CustomizedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */; };
+		9EE7BFFC2ACAECB400457A09 /* CustomizedGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,9 +140,6 @@
 		9E4ACAA12AC9612500B0552E /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9E4ACAA22AC9612500B0552E /* CoreDataFetchPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataFetchPublisher.swift; sourceTree = "<group>"; };
 		9E4ACAA32AC9612500B0552E /* CoreDataSavePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSavePublisher.swift; sourceTree = "<group>"; };
-		9E4ACAA92AC9626A00B0552E /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
-		9E4ACAAA2AC9626A00B0552E /* FontNameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontNameManager.swift; sourceTree = "<group>"; };
-		9E4ACAAC2AC9626A00B0552E /* arialbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arialbold.ttf; sourceTree = "<group>"; };
 		9E4ACAAE2AC9626B00B0552E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		9E4ACAB02AC9626B00B0552E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9E4ACAB72AC9632A00B0552E /* Optional + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional + Extension.swift"; sourceTree = "<group>"; };
@@ -228,6 +225,9 @@
 		9E4ACB8B2AC99ABA00B0552E /* SignInViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTest.swift; sourceTree = "<group>"; };
 		9E4ACB8E2AC99C8F00B0552E /* SignInRemoteMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteMock.swift; sourceTree = "<group>"; };
 		9E4ACB902AC9A43400B0552E /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		9E4ACB922AC9F11E00B0552E /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedText.swift; sourceTree = "<group>"; };
+		9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedGeometry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,7 +390,6 @@
 			children = (
 				9E4ACAAD2AC9626B00B0552E /* Assets */,
 				9E4ACAAF2AC9626B00B0552E /* Color */,
-				9E4ACAA82AC9626A00B0552E /* Fonts */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -422,24 +421,6 @@
 				9E4ACA6A2AC95EEA00B0552E /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		9E4ACAA82AC9626A00B0552E /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				9E4ACAA92AC9626A00B0552E /* FontManager.swift */,
-				9E4ACAAA2AC9626A00B0552E /* FontNameManager.swift */,
-				9E4ACAAB2AC9626A00B0552E /* Files */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		9E4ACAAB2AC9626A00B0552E /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				9E4ACAAC2AC9626A00B0552E /* arialbold.ttf */,
-			);
-			path = Files;
 			sourceTree = "<group>";
 		};
 		9E4ACAAD2AC9626B00B0552E /* Assets */ = {
@@ -724,7 +705,6 @@
 		9E4ACB392AC97A4400B0552E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9E4ACB3A2AC97A4400B0552E /* SearchBar.swift */,
 				9E4ACB3B2AC97A4400B0552E /* SignInView.swift */,
 				9E4ACB3C2AC97A4400B0552E /* AuthTextView.swift */,
 			);
@@ -760,6 +740,10 @@
 			isa = PBXGroup;
 			children = (
 				9E4ACB512AC9809600B0552E /* HomeView.swift */,
+				9E4ACB3A2AC97A4400B0552E /* SearchBar.swift */,
+				9E4ACB922AC9F11E00B0552E /* PostListView.swift */,
+				9EE7BFF92ACAEC8E00457A09 /* CustomizedText.swift */,
+				9EE7BFFB2ACAECB400457A09 /* CustomizedGeometry.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -972,7 +956,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4ACA6E2AC95EEA00B0552E /* Preview Assets.xcassets in Resources */,
-				9E4ACAB32AC9626B00B0552E /* arialbold.ttf in Resources */,
 				9E4ACA6B2AC95EEA00B0552E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1030,7 +1013,9 @@
 				9E4ACB032AC967B700B0552E /* Encoding.swift in Sources */,
 				9E4ACB092AC967CC00B0552E /* NetworkTarget + Default.swift in Sources */,
 				9E4ACAF12AC9664C00B0552E /* NavigationBarModifier.swift in Sources */,
+				9EE7BFFC2ACAECB400457A09 /* CustomizedGeometry.swift in Sources */,
 				9E4ACB1A2AC9688200B0552E /* NetworkTarget + Extension.swift in Sources */,
+				9EE7BFFA2ACAEC8E00457A09 /* CustomizedText.swift in Sources */,
 				9E4ACAD32AC9632A00B0552E /* MessageHelper.swift in Sources */,
 				9E4ACAEB2AC965AD00B0552E /* SpinnerView.swift in Sources */,
 				9E4ACB572AC9824800B0552E /* PostsCacheRepository.swift in Sources */,
@@ -1041,7 +1026,6 @@
 				9E4ACB262AC9694900B0552E /* TabBar.swift in Sources */,
 				9E4ACAF42AC9668E00B0552E /* ActivityIndicator.swift in Sources */,
 				9E4ACACC2AC9632A00B0552E /* Publisher + Extension.swift in Sources */,
-				9E4ACAB12AC9626B00B0552E /* FontManager.swift in Sources */,
 				9E4ACB042AC967B700B0552E /* HTTPMethod.swift in Sources */,
 				9E4ACB592AC9825200B0552E /* SearchPostsDataRemote.swift in Sources */,
 				9E4ACB5B2AC9826D00B0552E /* SearchPostsUsecase.swift in Sources */,
@@ -1057,13 +1041,13 @@
 				9E4ACB162AC9684F00B0552E /* Configuration.swift in Sources */,
 				9E4ACACB2AC9632A00B0552E /* Int + Extension.swift in Sources */,
 				9E4ACB052AC967B700B0552E /* Encoding + Dictionary.swift in Sources */,
-				9E4ACAB22AC9626B00B0552E /* FontNameManager.swift in Sources */,
 				9E4ACAE72AC9658500B0552E /* Log.swift in Sources */,
 				9E4ACACF2AC9632A00B0552E /* Binding+Utils.swift in Sources */,
 				9E4ACAF92AC9673300B0552E /* ViewDidLoadModifier.swift in Sources */,
 				9E4ACAA72AC9612500B0552E /* CoreDataSavePublisher.swift in Sources */,
 				9E4ACB522AC9809600B0552E /* HomeViewModel.swift in Sources */,
 				9E4ACB2B2AC9795100B0552E /* AppDependencyContainer + Injection.swift in Sources */,
+				9E4ACB932AC9F11E00B0552E /* PostListView.swift in Sources */,
 				9E4ACB562AC9824800B0552E /* SearchPostsRepository.swift in Sources */,
 				9E4ACA672AC95EE900B0552E /* LOGOApp.swift in Sources */,
 				9E4ACB292AC9794A00B0552E /* AppDependencyContainer.swift in Sources */,
@@ -1177,7 +1161,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1231,7 +1215,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1254,8 +1238,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1282,8 +1266,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

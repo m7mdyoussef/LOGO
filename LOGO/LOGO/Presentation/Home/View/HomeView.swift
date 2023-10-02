@@ -1,22 +1,9 @@
 
 import SwiftUI
 
-enum PostType{
-    case posts
-    case search
-}
-
 struct HomeView: View {
-    
-    enum Constant {
-        static let topPadding: CGFloat = 5
-        static let searchHeight: CGFloat = 48
-        static let spacing: CGFloat = 30
-        static let cornerRadius: CGFloat = 10
-    }
-    
+    //Properties
     @StateObject var viewModel: HomeViewModel = HomeViewModel()
-
     @State private var isLoggoVisible = true
     @State private var isSearchBarVisible = false
     @State private var shouldShowDropdown = false
@@ -27,73 +14,82 @@ struct HomeView: View {
     @State private var alertMesagee: String = ""
     let subscriber = Cancelable()
     
+    enum Constant {
+        static let topPadding: CGFloat = 5
+        static let searchHeight: CGFloat = 48
+    }
+    
+    //body
+    var body: some View {
+        NavigationView {
+            ZStack {
+                VStack{
+                    if isLoggoVisible{
+                        HStack{
+                            Image(Assets.logo)
+                            Spacer()
+                            Button {
+                                isLoggoVisible = false
+                            } label: {
+                                Image(Assets.search)
+                            }//: Button
+                        }//: HStack
+                        .padding()
+                    }else{
+                        self.showSearchField()
+                    }
+                    
+                    PostListView(viewModel: viewModel, postType: .posts, isLoading: $isLoading, cashedDataPresented: $cashedDataPresented)
+                }//: VStack
+                
+                TabBar()
+                if !presentAlert{
+                    self.showAlert(Constants.Alert.Error, alertMesagee)
+                }
+            }//: ZStack
+            .onViewDidLoad {
+                self.viewModel.apply(.onAppear)
+            }
+        }//: NavigationView
+        .onAppear(perform: handleState)
+    }
+    
+    //functions
+    /// showSearchField functions shows overlay view of Search Bar with the posts results
+    /// - Returns: returns a view of Search Bar with the posts results
     func showSearchField() -> some View{
-            SearchBar(isLoading: isLoading,
-                      text: $viewModel.searchText,
-                      isEditing: $shouldShowDropdown ,didTapCancelSearch: {
-                isLoggoVisible = true
-            })
-            .padding(.horizontal, 10)
-            .overlay(
-                VStack {
-                    if self.shouldShowDropdown {
-                        Spacer(minLength: Constant.searchHeight)
-                        PostListView(viewModel: viewModel, postType: .search, isLoading: $isLoading, cashedDataPresented: $cashedDataPresented)
-                        .frame(height: 800)
+        SearchBar(isLoading: isLoading,
+                  text: $viewModel.searchText,
+                  isEditing: $shouldShowDropdown ,didTapCancelSearch: {
+            isLoggoVisible = true
+        })
+        .padding(.horizontal, 10)
+        .overlay(
+            VStack {
+                if self.shouldShowDropdown {
+                    Spacer(minLength: Constant.searchHeight)
+                    PostListView(viewModel: viewModel, postType: .search, isLoading: $isLoading, cashedDataPresented: $cashedDataPresented)
+                        .frame(height: UIScreen.screenHeight)
                         .padding(.vertical, 5)
                         .background(Color.white)
                         .overlay(
                             RoundedRectangle(cornerRadius: 1)
-                                .stroke(Color("lightGreyColor"), lineWidth: 1)
+                                .stroke(Color.lightGreyColor, lineWidth: 1)
                         )
-                    }
-                }, alignment: .topLeading
-            )
-            .background(
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color.white)
-            )
-            .zIndex(1)
-            .padding(.top, Constant.topPadding)
-    }
-    
-    var body: some View {
-        NavigationView {
-                ZStack {
-                    VStack{
-                        if isLoggoVisible{
-                            HStack{
-                                Image("logo")
-                                Spacer()
-                                Button {
-                                    isLoggoVisible = false
-                                    
-                                } label: {
-                                    Image("search")
-                                }
-                            }.padding()
-                        }else{
-                            self.showSearchField()
-                        }
-
-                        PostListView(viewModel: viewModel, postType: .posts, isLoading: $isLoading, cashedDataPresented: $cashedDataPresented)
-                    }
-                    
-                    
-                    TabBar()
-                    if !presentAlert{
-                        self.showAlert("Error", alertMesagee)
-                    }
                 }
-            .onViewDidLoad {
-                self.viewModel.apply(.onAppear)
-            }
-        }
-        .onAppear(perform: handleState)
+            }, alignment: .topLeading
+        )
+        .background(
+            RoundedRectangle(cornerRadius: 5)
+                .fill(Color.white)
+        )
+        .zIndex(1)
+        .padding(.top, Constant.topPadding)
     }
 }
 
 extension HomeView {
+    /// handle Api response state to show / hide alerts and how / hide loader
     private func handleState() {
         self.viewModel.loadingState
             .receive(on: WorkScheduler.mainThread)
@@ -117,11 +113,16 @@ extension HomeView {
 }
 
 extension HomeView {
+    /// show Alert with title and message
+    /// - Parameters:
+    ///   - title: alert title shows general description of the showing reason
+    ///   - message: alert message shows a description of showing alert
+    /// - Returns: returns the alert view with alert components
     func showAlert(_ title: String, _ message: String) -> some View {
-        CustomAlertView(title: title, message: message, primaryButtonLabel: "Retry", primaryButtonAction: {
+        CustomAlertView(title: title, message: message, primaryButtonLabel: Constants.Alert.Retry, primaryButtonAction: {
             self.presentAlert = true
             self.viewModel.callFirstTime()
-        } , secondaryButtonLabel: "Ok", secondaryButtonAction: {
+        } , secondaryButtonLabel: Constants.Alert.OK, secondaryButtonAction: {
             self.presentAlert = true
         })
         .previewLayout(.sizeThatFits)
@@ -136,69 +137,7 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-struct PostListView: View {
-    
-    enum Constant {
-        static let cornerRadius: CGFloat = 10
-    }
-    
-    @StateObject var viewModel: HomeViewModel
-    var postType:PostType
-    @Binding var isLoading: Bool
-    @Binding var cashedDataPresented: Bool
-    
-    var body: some View {
-        ScrollView {
-                LazyVStack(alignment: .center){
-                    let postList = (postType == .posts) ? viewModel.posts : viewModel.searchData
-                    ForEach(postList, id: \.id) { post  in
-                        VStack(alignment: .leading, spacing: 15){
-                            HStack {
-                                Image("profileImg")
-                                    .resizable()
-                                    .clipShape (Circle())
-                                    .frame(width: 40, height: 40)
-                                    .clipped()
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("mohamed youssef").font(.headline)
-                                        .fontWeight(.medium)
-                                    Text("Posted 2 hrs ago").font(.subheadline).foregroundColor(.gray)
-                                }
-                            }
-                            
-                            Text(post.body ?? "").foregroundColor(Color("darkGrey")) .lineLimit (nil)
-                            
-                            GeometryReader { geometry in
-                                Image("dish1")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: geometry.size.width, height: geometry.size.height)
-                                    .clipped()
-                                    .cornerRadius(8)
-                            }
-                            .frame(minHeight: 150, idealHeight: 250)
-                        }
-                        .padding()
-                        
-                        Divider().frame(height: 3.0)
-                    }
-                    
-                    if isLoading {
-                        ZStack(alignment: .center) {
-                            RoundedRectangle(cornerRadius: Constant.cornerRadius)
-                                .foregroundColor(Color.white.opacity(0.8))
-                                .frame(width: 40.0, height: 40.0)
-                            ActivityIndicator(style: .medium, animate: .constant(true))
-                        }
-                    } else {
-                        Color.clear
-                            .onAppear {
-                                if !isLoading, !self.viewModel.posts.isEmpty, (postType == .posts), !cashedDataPresented {
-                                    self.viewModel.loadMore()
-                                }
-                            }
-                    }
-                }
-        }
-    }
+enum PostType{
+    case posts
+    case search
 }
