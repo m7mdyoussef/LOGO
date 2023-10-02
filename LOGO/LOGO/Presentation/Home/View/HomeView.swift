@@ -41,6 +41,8 @@ struct HomeView: Coordinatable {
                         self.showSearchField()
                     }
                     
+                    Divider()
+                    
                     PostListView(viewModel: viewModel, postType: .posts, isLoading: $isLoading, cashedDataPresented: $cashedDataPresented)
                 }//: VStack
                 
@@ -75,8 +77,8 @@ struct HomeView: Coordinatable {
                         .padding(.vertical, 5)
                         .background(Color.white)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 1)
-                                .stroke(Color.lightGreyColor, lineWidth: 1)
+                            RoundedRectangle(cornerRadius: 0)
+                                .stroke(Color.lightGreyColor, lineWidth: 0.5)
                         )
                 }
             }, alignment: .topLeading
