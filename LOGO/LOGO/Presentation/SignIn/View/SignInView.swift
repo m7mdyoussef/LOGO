@@ -29,8 +29,6 @@ struct SignInView: Coordinatable {
                             Image(Assets.loginPanner)
                                 .resizable()
                                 .scaledToFill()
-//                                .frame(minWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight / 3, alignment: .center)
-
                             Text(Constants.Auth.welcome)
                                 .foregroundColor(Color.primaryColor)
                                 .font(.title3)
