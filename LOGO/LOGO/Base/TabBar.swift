@@ -34,13 +34,14 @@ struct TabBar: View {
         ForEach(tabItems) { item in
                 Image(item.icon)
                     .renderingMode(.template)
-                    .foregroundColor(selectedTab == item.tab ? Color.accentColor : Color("lightGreyColor"))
+                    .foregroundColor(selectedTab == item.tab ? Color.primaryColor : Color.lightGreyColor)
                     .frame(width: 36, height: 36)
                     .frame(maxWidth: .infinity)
                 
                     .background(
                         VStack {
                             RoundedRectangle(cornerRadius: 2)
+                                .foregroundColor(Color.primaryColor)
                                 .frame(width: selectedTab == item.tab ? 20 : 0, height: 4)
                                 .offset(y: -4)
                                 .opacity(selectedTab == item.tab ? 1 : 0)
